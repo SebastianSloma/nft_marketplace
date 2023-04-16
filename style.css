@@ -18,6 +18,11 @@ body {
 	background: var(--color-black);
 	user-select: none;
 }
+img{
+	width: 100%;
+	max-width: 100%;
+	object-fit: cover;
+}
 
 h1,
 h2,
@@ -27,6 +32,12 @@ h5,
 h6 {
 	margin: 0;
     color: var(--color-white);
+}
+h2{
+	font-weight: 700;
+	font-size: clamp(25px, 5vw, 48px);
+	line-height: 1.2;
+	text-transform: capitalize;
 }
 p {
 	margin: 0;
@@ -199,10 +210,48 @@ nav a:hover {
 	gap: 25px;
 }
 .hero-card{
-    max-width: 400px;
+    max-width: 500px;
     margin: 0 auto;
 }
 /* end hero section */
+
+/* Live auction */
+.live-auction{
+	padding: 2em 0;
+}
+.header-arrows{
+	align-items: center;
+	justify-content: center;
+	gap: 2em;
+}
+.arrows{
+	gap: 50px;
+	height: 30px;
+}
+.arrows .swiper-button-next, .arrows .swiper-button-prev{
+	position: relative;
+	background: var(--color-gradient);
+	color: var(--color-white);
+	padding: 0 1.5em;
+	border-radius: 5px;
+}
+.swiper-button-prev::after{
+	background-image: url(icon/left-arrow.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.swiper-button-next::after{
+	background-image: url(icon/right-arrow.png);
+	background-position: center;
+	background-repeat: no-repeat;
+}
+.live-swiper .swiper-wrapper{
+	padding: 50px 0;
+}
+.live-swiper .card-bid{
+padding-top: 24px;
+}
+/* End Live Auction */
 
 /* media queries */
 /* @media screen and (min-width: 1235px){

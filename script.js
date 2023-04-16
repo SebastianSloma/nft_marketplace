@@ -42,7 +42,7 @@ const swiper = new Swiper(".live-swiper", {
             },
     
               "@1.40": {
-                slidesPerView: 2.5,
+                slidesPerView: 2.25,
                 spaceBetwen: 40,
               },
      
