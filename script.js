@@ -6,24 +6,51 @@ function toggleMenu(){
     navigation.classList.toggle('active')
 }
 // swipper
-var swiper = new Swiper(".live-swiper", {
-    slidesPerView: 1,
-    centeredSlides: false,
+const swiper = new Swiper(".live-swiper", {
+    slidesPerView: 3,
+   spaceBetwen:30,
     slidesPerGroupSkip: 1,
     grabCursor: true,
     keyboard: {
       enabled: true,
     },
-    breakpoints: {
-      769: {
-        slidesPerView: 2,
-        slidesPerGroup: 1,
-      },
-    },
+    
    
     navigation: {
       nextEl: ".live-swiper .swiper-button-next",
       prevEl: ".live-swiper .swiper-button-prev",
+    },
+    breakpoints: {
+      "@0.00": {
+        slidesPerView: 1,
+        spaceBetwen: 10,
+      },
+ 
+        "@0.75": {
+          slidesPerView: 1.5,
+          spaceBetwen: 10,
+        },
+     
+          "@0.85": {
+            slidesPerView: 1.5,
+            spaceBetwen: 20,
+          },
+    
+            "@1.00": {
+              slidesPerView: 2,
+              spaceBetwen: 40,
+            },
+    
+              "@1.40": {
+                slidesPerView: 2.5,
+                spaceBetwen: 40,
+              },
+     
+                "@1.50": {
+                  slidesPerView: 3,
+                  spaceBetwen: 50,
+                },
+
     },
  
   });
