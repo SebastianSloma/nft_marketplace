@@ -18,7 +18,7 @@ body {
 	background: var(--color-black);
 	user-select: none;
 }
-img{
+img {
 	width: 100%;
 	max-width: 100%;
 	object-fit: cover;
@@ -31,9 +31,9 @@ h4,
 h5,
 h6 {
 	margin: 0;
-    color: var(--color-white);
+	color: var(--color-white);
 }
-h2{
+h2 {
 	font-weight: 700;
 	font-size: clamp(25px, 5vw, 48px);
 	line-height: 1.2;
@@ -209,49 +209,117 @@ nav a:hover {
 	justify-content: center;
 	gap: 25px;
 }
-.hero-card{
-    max-width: 500px;
-    margin: 0 auto;
+.hero-card {
+	max-width: 500px;
+	margin: 0 auto;
 }
 /* end hero section */
 
 /* Live auction */
-.live-auction{
+.live-auction,
+.explore-art {
 	padding: 2em 0;
 }
-.header-arrows{
+.header-arrows {
 	align-items: center;
 	justify-content: center;
 	gap: 2em;
 }
-.arrows{
+.arrows {
 	gap: 50px;
 	height: 30px;
 }
-.arrows .swiper-button-next, .arrows .swiper-button-prev{
+.arrows .swiper-button-next,
+.arrows .swiper-button-prev {
 	position: relative;
 	background: var(--color-gradient);
 	color: var(--color-white);
 	padding: 0 1.5em;
 	border-radius: 5px;
 }
-.swiper-button-prev::after{
+.swiper-button-prev::after {
 	background-image: url(icon/left-arrow.png);
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.swiper-button-next::after{
+.swiper-button-next::after {
 	background-image: url(icon/right-arrow.png);
 	background-position: center;
 	background-repeat: no-repeat;
 }
-.live-swiper .swiper-wrapper{
+.live-swiper .swiper-wrapper {
 	padding: 20px 0;
 }
-.live-swiper .card-bid{
-padding-top: 24px;
+.live-swiper .card-bid,
+.column .card-bid {
+	padding-top: 24px;
 }
 /* End Live Auction */
+
+/* Explore Art Section */
+.tags-filter {
+	position: relative;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2em;
+	padding-top: 2em;
+}
+.tags {
+	align-items: center;
+	gap: 16px;
+	padding: 10px 0;
+}
+
+.tags p {
+	text-transform: capitalize;
+}
+.explore-art p {
+	color: white;
+}
+.explore-cards {
+	grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+	gap: 30px;
+	padding: 2em 0;
+}
+/* End Explore Art Section */
+
+/* Filter Option */
+.filter-body {
+	position: relative;
+}
+.toggleFilter {
+	gap: 10px;
+}
+.toggleFilter p {
+	white-space: nowrap;
+}
+.toggleFilter img {
+	width: 20px;
+	background: white;
+}
+.filterOptions {
+	position: absolute;
+	top: 100%;
+	width: 100%;
+	min-height: 0;
+	opacity: 0;
+	transform: scale(0);
+}
+.filterOptions.active {
+	min-height: 100%;
+	opacity: 1;
+	transform: scale(1);
+	background: #ffffff;
+	border-radius: 8px;
+	text-align: center;
+}
+.filterOptions li {
+	margin-top: 10px;
+}
+.explore-cards .card-bid div:nth-last-of-type(1){
+	max-width: fit-content;
+}
+/* End Filter Option */
 
 /* media queries */
 /* @media screen and (min-width: 1235px){
@@ -305,8 +373,8 @@ padding-top: 24px;
 	}
 }
 
-@media screen and (min-width:600px){
-    .hero-btns{
-        justify-content: flex-start;
-    }
+@media screen and (min-width: 600px) {
+	.hero-btns {
+		justify-content: flex-start;
+	}
 }
