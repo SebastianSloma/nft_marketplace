@@ -4,7 +4,7 @@ const toggleMenu = () => {
 	const navigation = document.querySelector('.navigation');
 	toggleMenu.classList.toggle('active');
 	navigation.classList.toggle('active');
-}
+};
 // swipper
 const swiper = new Swiper('.live-swiper', {
 	slidesPerView: 3,
@@ -59,22 +59,61 @@ const toggleFil = () => {
 	const filterOptions = document.querySelector('.filterOptions');
 	toggleFilter.classList.toggle('active');
 	filterOptions.classList.toggle('active');
-}
+};
 
 //filter cards
-const filtersCat = document.querySelector(".filter-btn")
+const filtersCat = document.querySelector('.filter-btn');
 
 let activeCards = document.querySelectorAll(
-	".explore-cards .card:not(.d-none"
+	'.explore-cards .card:not(.d-none)'
+);
+
+// filter cards by category
+filtersCat.forEach((filter) => {
+	filter.addEventListener('click', function () {
+		filtersCat.forEach((filter) => {
+			filter.classList.remove('active');
+		});
+		this.classList.add('active');
+		const category = this.dataset.cat;
+		const cards = document.querySelectorAll('.explore-cards .card');
+		cards.forEach((card) => {
+			if (category === card.dataset.type || category === 'all') {
+				card.classList.remove('d-none');
+			} else {
+				card.classList.add('d-none');
+			}
+		});
+		const cardsCount = document.querySelectorAll(
+			'.explore-cards .card:not(.d-none)'
+		);
+		if (cardsCount.length === 0) {
+			document.querySelector('.no-results').classList.remove('d-none');
+		} else {
+			document.querySelector('.no-results').classList.add('d-none');
+		}
+		activeCards = document.querySelectorAll(
+			'.explore-cards .card:not(.d-none)'
+		);
+	});
+});
+
+// filter by old date
+
+const filterOptionOld = document.querySelector(
+	".filterOptions li[data-filter='old']"
 )
 
-filtersCat.forEach((filter) => {
-	filter.addEventListener("click", function (){
-		filtersCat.forEach((filter) =>{
-			filter.classList.remove("active")
-		})
-		this.classList.add('active')
-		const category =this.dataset.cat
-		const cards = document.querySelectorAll('.explore-cards .card')
+filterOptionOld.addEventListener('click', function(){
+	activeCards = document.querySelectorAll(
+		'.explore-cards .card:not(.d-none)'
+	)
+	activeCardNew = Array.from(activeCards)
+	activeCardNew.sort(function(a,b){
+		return new Date(a.dataset.date) - new Date(b.dataset.date)
 	})
+	activeCardNew.forEach((card) =>{
+		card.parentNode.appendChild(card)
+	})
+	toggleFilter()
 })
