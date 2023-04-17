@@ -62,7 +62,7 @@ const toggleFil = () => {
 };
 
 //filter cards
-const filtersCat = document.querySelector('.filter-btn');
+const filtersCat = document.querySelectorAll('.filter-btn');
 
 let activeCards = document.querySelectorAll(
 	'.explore-cards .card:not(.d-none)'
@@ -102,18 +102,34 @@ filtersCat.forEach((filter) => {
 
 const filterOptionOld = document.querySelector(
 	".filterOptions li[data-filter='old']"
-)
+);
 
-filterOptionOld.addEventListener('click', function(){
-	activeCards = document.querySelectorAll(
-		'.explore-cards .card:not(.d-none)'
-	)
-	activeCardNew = Array.from(activeCards)
-	activeCardNew.sort(function(a,b){
-		return new Date(a.dataset.date) - new Date(b.dataset.date)
-	})
-	activeCardNew.forEach((card) =>{
-		card.parentNode.appendChild(card)
-	})
-	toggleFilter()
-})
+filterOptionOld.addEventListener('click', function () {
+	activeCards = document.querySelectorAll('.explore-cards .card:not(.d-none)');
+	activeCardNew = Array.from(activeCards);
+	activeCardNew.sort(function (a, b) {
+		return new Date(a.dataset.date) - new Date(b.dataset.date);
+	});
+	activeCardNew.forEach((card) => {
+		card.parentNode.appendChild(card);
+	});
+	toggleFil();
+});
+
+// filter by newdate
+
+const filterOptionNew = document.querySelector(
+	".filterOptions li[data-filter='new']"
+);
+
+filterOptionNew.addEventListener('click', function () {
+	activeCards = document.querySelectorAll('.explore-cards .card:not(.d-none)');
+	activeCardNew = Array.from(activeCards);
+	activeCardNew.sort(function (a, b) {
+		return new Date(b.dataset.date) - new Date(a.dataset.date);
+	});
+	activeCardNew.forEach((card) => {
+		card.parentNode.appendChild(card);
+	});
+	toggleFil();
+});
