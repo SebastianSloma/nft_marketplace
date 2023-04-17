@@ -1,5 +1,5 @@
 // menu
-function toggleMenu() {
+const toggleMenu = () => {
 	const toggleMenu = document.querySelector('.toggleMenu');
 	const navigation = document.querySelector('.navigation');
 	toggleMenu.classList.toggle('active');
@@ -54,9 +54,27 @@ const swiper = new Swiper('.live-swiper', {
 
 // filter
 
-function toggleFil() {
+const toggleFil = () => {
 	const toggleFilter = document.querySelector('.toggleFilter');
 	const filterOptions = document.querySelector('.filterOptions');
 	toggleFilter.classList.toggle('active');
 	filterOptions.classList.toggle('active');
 }
+
+//filter cards
+const filtersCat = document.querySelector(".filter-btn")
+
+let activeCards = document.querySelectorAll(
+	".explore-cards .card:not(.d-none"
+)
+
+filtersCat.forEach((filter) => {
+	filter.addEventListener("click", function (){
+		filtersCat.forEach((filter) =>{
+			filter.classList.remove("active")
+		})
+		this.classList.add('active')
+		const category =this.dataset.cat
+		const cards = document.querySelectorAll('.explore-cards .card')
+	})
+})
