@@ -93,7 +93,8 @@ ul {
 .page-btn.active,
 .page-btn:hover,
 .toggleFilter.active,
-.filterOptions ul li:hover {
+.filterOptions ul li:hover,
+form button:hover {
 	color: var(--color-white);
 	background: var(--color-gradient);
 	border-color: transparent;
@@ -225,7 +226,8 @@ nav a:hover {
 
 /* Live auction */
 .live-auction,
-.explore-art, .popular-artist {
+.explore-art,
+.popular-artist {
 	padding: 2em 0;
 }
 .header-arrows {
@@ -329,32 +331,31 @@ nav a:hover {
 }
 /* End Filter Option */
 
-
 /* popular artist */
-.profile-card{
+.profile-card {
 	align-items: center;
 	gap: 16px;
 }
 
-.profile-card+.profile-card{
+.profile-card + .profile-card {
 	padding-top: 2em;
 }
-.profile-card h5{
+.profile-card h5 {
 	font-weight: 700;
 	font-size: 24px;
 }
-.profile-card .card-profile{
+.profile-card .card-profile {
 	padding: 0;
 	gap: 16px;
 }
-.profile-card .card-profile div img{
+.profile-card .card-profile div img {
 	width: 56px;
 	height: 56px;
 }
-.profile-card .card-profile h4{
+.profile-card .card-profile h4 {
 	font-size: 24px;
 }
-.profile-card .card-profile p{
+.profile-card .card-profile p {
 	font-weight: 500;
 	font-size: 14px;
 	color: var(--color-grey);
@@ -363,6 +364,56 @@ nav a:hover {
 }
 
 /* end popular artist */
+
+/* SUBSCRIBE */
+.subscribe {
+	justify-content: center;
+	align-items: center;
+	background: var(--color-gradient);
+	padding: 7em 0;
+	margin: 2em auto;
+	border-radius: 5px;
+}
+.subscribe div {
+	max-width: 820px;
+	text-align: center;
+	padding: 0 16px;
+}
+.subscribe h2 {
+	padding-bottom: 32px;
+}
+.subscribe p {
+	font-size: 16px;
+}
+.subscribe form {
+	padding-top: 2em;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	gap: 16px;
+}
+form input {
+	border: 0;
+	outline: 0;
+	background: var(--color-dark);
+	padding: 15px;
+	width: 100%;
+	border-radius: 5px;
+}
+form input::placeholder {
+	color: var(--color-white);
+}
+form button {
+	border: 0;
+	font-weight: 700;
+	color: var(--color-dark);
+	font-size: 16px;
+	padding: 13px 2em;
+	cursor: pointer;
+	border-radius: 5px;
+	transition: 0.3s ease-in-out;
+}
+/* END SUBSCRIBE */
 
 /* media queries */
 /* @media screen and (min-width: 1235px){
@@ -419,5 +470,8 @@ nav a:hover {
 @media screen and (min-width: 600px) {
 	.hero-btns {
 		justify-content: flex-start;
+	}
+	.subscribe form input {
+		width: 60%;
 	}
 }
