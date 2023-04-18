@@ -70,11 +70,13 @@ ul {
 	flex: 1 1 25em;
 }
 
-.d-none{
+.d-none {
 	display: none;
 }
 /* page button */
-.page-btn, .toggleFilter, .filterOptions ul li{
+.page-btn,
+.toggleFilter,
+.filterOptions ul li {
 	cursor: pointer;
 	font-weight: 700;
 	font-size: 16px;
@@ -89,7 +91,9 @@ ul {
 	border: 0;
 }
 .page-btn.active,
-.page-btn:hover, .toggleFilter.active, .filterOptions ul li:hover {
+.page-btn:hover,
+.toggleFilter.active,
+.filterOptions ul li:hover {
 	color: var(--color-white);
 	background: var(--color-gradient);
 	border-color: transparent;
@@ -221,7 +225,7 @@ nav a:hover {
 
 /* Live auction */
 .live-auction,
-.explore-art {
+.explore-art, .popular-artist {
 	padding: 2em 0;
 }
 .header-arrows {
@@ -313,7 +317,7 @@ nav a:hover {
 	min-height: 100%;
 	opacity: 1;
 	transform: scale(1);
-	
+
 	border-radius: 8px;
 	text-align: center;
 }
@@ -324,6 +328,41 @@ nav a:hover {
 	max-width: fit-content;
 }
 /* End Filter Option */
+
+
+/* popular artist */
+.profile-card{
+	align-items: center;
+	gap: 16px;
+}
+
+.profile-card+.profile-card{
+	padding-top: 2em;
+}
+.profile-card h5{
+	font-weight: 700;
+	font-size: 24px;
+}
+.profile-card .card-profile{
+	padding: 0;
+	gap: 16px;
+}
+.profile-card .card-profile div img{
+	width: 56px;
+	height: 56px;
+}
+.profile-card .card-profile h4{
+	font-size: 24px;
+}
+.profile-card .card-profile p{
+	font-weight: 500;
+	font-size: 14px;
+	color: var(--color-grey);
+	padding-top: 20px;
+	line-height: 1;
+}
+
+/* end popular artist */
 
 /* media queries */
 /* @media screen and (min-width: 1235px){

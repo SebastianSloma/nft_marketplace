@@ -133,3 +133,51 @@ filterOptionNew.addEventListener('click', function () {
 	});
 	toggleFil();
 });
+
+
+// swipper popular artist
+const swiperPop = new Swiper('.popular-artist-slider', {
+	slidesPerView: 3,
+	spaceBetwen: 30,
+	slidesPerGroupSkip: 1,
+	grabCursor: true,
+	keyboard: {
+		enabled: true,
+	},
+
+	navigation: {
+		nextEl: '.popular-artist-slider .swiper-button-next',
+		prevEl: '.popular-artist-slider .swiper-button-prev',
+	},
+	breakpoints: {
+		'@0.00': {
+			slidesPerView: 1,
+			spaceBetwen: 10,
+		},
+
+		'@0.75': {
+			slidesPerView: 1.5,
+			spaceBetwen: 10,
+		},
+
+		'@0.85': {
+			slidesPerView: 1.5,
+			spaceBetwen: 20,
+		},
+
+		'@1.00': {
+			slidesPerView: 2,
+			spaceBetwen: 40,
+		},
+
+		'@1.40': {
+			slidesPerView: 2.25,
+			spaceBetwen: 40,
+		},
+
+		'@1.50': {
+			slidesPerView: 3,
+			spaceBetwen: 50,
+		},
+	},
+});
