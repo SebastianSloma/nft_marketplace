@@ -415,6 +415,62 @@ form button {
 }
 /* END SUBSCRIBE */
 
+/* FOOTER */
+footer{
+	padding: 6em 0 2em 0;
+	
+}
+
+.footer-content{
+	flex-wrap: wrap;
+	justify-content: space-between;
+	gap: 2px;
+	
+}
+footer .logo{
+	font-weight: 700;
+	color: white;
+	font-size: 20px;
+}
+footer span {
+	font-weight: 500;
+	color: rgb(216, 23, 230);
+}
+.footer-logo p{
+	padding-top: 32px;
+	color: var(--color-white);
+}
+footer h6{
+	font-weight: 700;
+	font-size: 24px;
+	padding-bottom: 22px;
+	color: #9b107d;
+}
+.footer-content li + li{
+padding-top: 10px;
+}
+footer a{
+	color: var(--color-white);
+}
+footer ul a:hover{
+	color: var(--color-grey);
+}
+.footer-bottom{
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: space-between;
+	gap: 2em;
+	padding-top: 2em;
+}
+.footer-bottom ul{
+	gap: 4em;
+}
+.copy-right{
+	font-size: 12px;
+	color: var(--color-white);
+}
+/* END FOOTER */
+
 /* media queries */
 /* @media screen and (min-width: 1235px){
     .container{
