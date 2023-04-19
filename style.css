@@ -181,6 +181,7 @@ nav ul {
 	margin: auto;
 }
 
+
 nav a {
 	font-weight: 700;
 	font-size: 16px;
@@ -520,6 +521,10 @@ footer ul a:hover{
 	nav ul {
 		flex-direction: column;
 		margin: unset;
+	}
+	.tags{
+		min-width: clamp(100px, 5vw, 600px);
+		overflow-x: scroll;
 	}
 }
 
